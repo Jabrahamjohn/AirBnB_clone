@@ -1,2 +1,3 @@
-0x01. AirBnB clone - Web static
+ the Air bnb clonclone simple project.
+ the basic html and css view of it
 
