@@ -1,0 +1,58 @@
+.places_amenities_pet_friendly {
+    background-image: url(../images/icon_pets.png);
+}
+
+.places_amenities_tv {
+    background-image: url(../images/icon_tv.png);
+}
+
+.places_amenities_wifi {
+    background-image: url(../images/icon_wifi.png);
+}
+
+.places_amenities_pet_friendly,
+.places_amenities_tv,
+.places_amenities_wifi {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.places .amenities ul li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    margin-bottom: 10px;
+    align-items: end;
+}
+
+.places .amenities,
+.places .reviews {
+  margin-top: 40px;
+  width: 100%;
+  height: inherit;
+}
+
+.places .amenities ul,
+.places .reviews ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.places .amenities h2,
+.places .reviews h2 {
+  font-size: 16px;
+  text-align: left;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.places .reviews h3 {
+  font-size: 14px;
+}
+
+.places .reviews p {
+  font-size: 12px;
+}

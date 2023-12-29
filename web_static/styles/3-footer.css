@@ -1,17 +1,10 @@
-/*
-  ========================================
-  footer styles
-  ========================================
-*/
-footer {
-  bottom: 0;
-  position: fixed;
-  height: 60px;
-  width: 100%;
-  background-color: white;
-  border-top: 1px solid #CCCCCC;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 60px;
+footer{
+    height: 60px; width: 100%;
+    background: white;
+    border-top: 1px solid #CCCCCC;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
-

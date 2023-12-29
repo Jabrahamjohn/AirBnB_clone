@@ -29,60 +29,132 @@ Destroy an object
 Resources
 Read or watch:
 
-cmd module
-packages concept page
-uuid module
-datetime
-unittest module
-args/kwargs
-Python test cheatsheet
-Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+# installation
+To have access to the console use the following command:
+'''
+git clone https://github.com/Jabrahamjohn/AirBnB_clone.git; cd AirBnB_clone
+'''
+# Run
 
-General
-- How to create a Python package
-- How to create a command interpreter in Python using the cmd module
-- What is Unit testing and how to implement it in a large project
-- How to serialize and deserialize a Class
-- How to write and read a JSON file
-- How to manage datetime
-- What is an UUID
-- What is *args and how to use it
-- What is **kwargs and how to use it
-- How to handle named arguments in a function
+If you want to execute the console use:
 
-## Requirements
-### Python Scripts
-- Allowed editors: vi, vim, emacs
-- All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
-- All your files should end with a new line
-- The first line of all your files should be exactly #!/usr/bin/python3
-- A README.md file, at the root of the folder of the project, is mandatory
-- Your code should use the pycodestyle (version 2.8.*)
-- All your files must be executable
-- The length of your files will be tested using wc
-- All your modules should have a documentation (python3 -c 'print(__import__("my_module").__doc__)')
-- All your classes should have a documentation (python3 -c 'print(__import__("my_module").MyClass.__doc__)')
-- All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
-- A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
-- Python Unit Tests
-- Allowed editors: vi, vim, emacs
-- All your files should end with a new line
-- All your test files should be inside a folder tests
-- You have to use the unittest module
-- All your test files should be python files (extension: .py)
-- All your test files and folders should start by test_
-- Your file organization in the tests folder should be the same as your project
-- e.g., For models/base_model.py, unit tests must be in: tests/test_models/test_base_model.py
-- e.g., For models/user.py, unit tests must be in: tests/test_models/test_user.py
-- All your tests should be executed by using this command: python3 -m unittest discover tests
-- You can also test file by file by using this command: python3 -m unittest tests/test_models/test_base_model.py
-- All your modules should have a documentation (python3 -c 'print(__import__("my_module").__doc__)')
-- All your classes should have a documentation (python3 -c 'print(__import__("my_module").MyClass.__doc__)')
-- All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
-We strongly encourage you to work together on test cases, so that you don’t miss any edge case
-GitHub
-There should be one project repository per group. If you clone/fork/whatever a project repository with the same name before the second deadline, you risk a 0% score.
+```
+python3 console.py
+```
+or
+```
+./console.py
+```
+
+
+# Testing 
+
+If you want to personalize the classes and execute unit tests to confirm that your changes haven't modify the functionality use:
+
+```
+python3 -m unittest discover tests
+```
+
+# Use
+
+## Available commands
+|Command| Explanation |
+|--|--|
+| create | Creates a new instance of `BaseModel`, saves it (to the JSON file) and prints the `id`. Ex: `$ create BaseModel`  |
+| show | Prints the string representation of an instance based on the class name and `id`. Ex: `$ show BaseModel 1234-1234-1234` |
+| all | Prints all string representation of all instances based or not on the class name. Ex: `$ all BaseModel` |
+| update | Updates an instance based on the class name and `id` by adding or updating attribute (save the change into the JSON file). Ex: `$ update BaseModel 1234-1234-1234 email "aibnb@holbertonschool.com"` |
+
+## Normal command input
+
+|Command| Example|
+|--|--|
+|create| create [class name] |
+|show| show [class name] [id] |
+|all| create [class name] [id]|
+|update| create [class name] [id] [arg_name] [arg_value]|
+
+
+## Alternative command input
+|Command| Example|
+|--|--|
+|[class name].all()| User.all() |
+|[class name].count()| User.count() |
+|[class name].show()| User.show() |
+|[class name].destroy()| User.destroy() |
+|[class name].update([id], [attribute name], [attribute value].all()| User.update("38f22813-2753-4d42-b37c-57a17f1e4f88", "first_name", "John") |
+|(class name).update([id], [dictionary representation])| User.update("38f22813-2753-4d42-b37c-57a17f1e4f88", {'first_name': "John", "age": 89}) |
+
+## Available classes
+|Class name| Attributes|
+|--|--|
+| BaseModel | `id`, `created_at`, `updated_at`  |
+| User| `email`, `password`, `first_name`, `last_name` |
+| State| `name` `state_id`|
+| City| `name`  |
+| Amenity | `name` |
+| Place | `city_id` `user_id` `name` `description` `number_rooms` `number_bathrooms` `max_guest` `price_by_night` `latitude``longitude` `amenity_ids` |
+| Review| `place_id` `user_id` `text` |
+
+* every model inherits attributes from BaseModel
+
+## How to start it
+
+### Interactive Mode
+```
+$ ./console.py
+```
+
+Now you are on interactive mode and you will see the prompt `(hbnb)`
+input a command:
+
+```
+(hbnb) create User
+```
+the id of the created model will be visible in the standard output, if you do:
+
+```
+(hbnb) show User [id]
+```
+
+All the attributes of the created model will be in your screen.
+
+use: 
+
+```
+(hbnb) help
+```
+For a list of usable commands, to exit press Ctrl+D or type the command quit.
+
+### Non-Interactive Mode
+
+The console can also be used in non-interactive mode:
+
+```
+$ echo "create User" | ./console.py
+
+$ echo "help" | ./console.py
+```
+
+The program will create a file called: `file.json` whenever you create a new model, it'll be store in the top folder.
+
+## Examples
+
+Executing help command.
+
+![Help](https://github.com/daorejuela1/AirBnB_clone/blob/master/images/help.gif)
+
+Getting help for a command
+
+![Help update](https://github.com/daorejuela1/AirBnB_clone/blob/master/images/help%20update.gif)
+
+Creating a new user, showing the ID and updating the fields
+
+![Create & Update](https://github.com/daorejuela1/AirBnB_clone/blob/master/images/create%20user%20and%20update.gif)
+
+Creating a new basemodel, counting basemodel, delete and count again
+
+![Destroy](https://github.com/daorejuela1/AirBnB_clone/blob/master/images/destroy.gif)
 
 More Info
 Execution

@@ -1,23 +1,10 @@
-/*
-  ========================================
-  header styles
-  ========================================
-*/
-header {
-  top: 0;
-  position: fixed;
-  height: 70px;
-  width: 100%;
-  border-bottom: 1px solid #CCCCCC;
-  background-color: white;
+header{
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position-x: 20px;
+    background-position-y: center;
 }
-
-.logo {
-  top: 0;
-  height: 70px;
-  width: 100%;
-	background-image: url("../images/logo.png");
-  background-repeat: no-repeat;
-  background-position: 20px;
-}
-
